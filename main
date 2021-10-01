@@ -1,0 +1,121 @@
+Testes manuais realizados na plataforma Bear (codname)
+
+Foram encontrados alguns bugs e melhorias nos quais serão destacados abaixo:
+
+[BUG]Campo de endereço é preenchido com os dados após colocar o país de origem e não
+somente o CEP
+
+[MELHORIA] Ao informar o Gênero, subtituir a palavra indefinido para, prefiro não dizer
+[MELHORIA]Plataforma não reconhece usuários inexistentes na mesma
+[MELHORIA]Na tela de perfil do usuáriLink de whatsapp não deve ficar disponivel no meu perfil e somente para um usuário administrador ou 
+recrutador da vaga
+
+
+#language: pt
+
+
+Funcionalidade: Acessar a plataforma de vagas disponíveis e realizar meu cadastro para a vaga escolhida
+
+
+        Contexto:
+            Dado que eu acesso a plataforma Bear
+
+        @acessarplataforma
+        Cenario: Acessar a plataforma de vagas
+             Quando eu visualizo as vagas disponíveis
+             Então  escolho uma vaga de meu interesse
+
+
+
+        @filtrarporcidade
+        Cenario: Filtrar vagas por cidade
+             Quando eu visualizo as vagas disponíveis
+              E desedo filtrar uma vaga por cidade
+             Então no campo cidade, eu escolho as cidades disponíveis e vejo as vagad disponiveis naquela cidade
+        @filtrarvagaporcargo
+        Cenario: Filtrar vagas por cargo
+             Quando eu visualizo as vagas disponíveis
+              E desedo filtrar uma vaga por nome
+             Então no campo buscar vaga, eu preencho o nome da vaga a qual desejo buscar e ela é exibida na tela
+
+#bug: o campo cidade não é obrigatório no preenchimentode requisitos da vaga, sendo assim, se o candidato não preencher a cidade
+#não será possivel achar a vaga correta sem o filtro, exceto se olhar vaga pelo nome da vaga, o que
+#não fica nada otimizado para o usuário
+
+
+        @verdetalhesvaga
+        Cenario: Ver Detalhes da Vaga
+             Quando eu acessar as vagas disponiveis
+             Então eu desejo visualizar os detalhes da vaga
+
+        @realizarloginvialinkedin
+        Cenario: Cadastrar na plataforma via Linkedin
+             Quando eu dsejar realizar login na Bear
+              E possuo conta no Linkedin
+             Então na tela de login eu clico no campo linkedin, preencho meus dados e acesso a plataforma Bear
+
+        @cadastrarvagapreenchendoinfos
+        Cenario: Cadastrar na plataforma preenchendo o formulário
+             Quando eu escolher uma vaga de meu interesse
+              E desejo me cadastrar na plataforma
+              E preencho os meus dados com sucesso
+              E seleciono as opções do formulário
+             Então eu salvo meus dados com sucesso
+
+        @usuariojacadastrado
+        Cenario: Tentar cadastra um usuário já cadastrado na plataforma
+             Quando eu escolher uma vaga de meu interesse
+              E desejo me cadastrar na plataforma
+              E preencho os campos de forma correta
+             Então eu salvo meus dados com sucesso
+
+        @acessarmenu
+        Cenario: Acessando menu de cadastro da Bear
+             Quando eu sou cadastrada na plataforma Bear
+              E eu realizo o login na plataforma
+              E acesso o menu da Bear
+              E clico no perfil
+              E eu visualizo minha ficha cadastral
+             Então tenho a opção de editar e/ou baixar meu currículo
+             
+        @editarcurriculo
+        Cenario: Editar meu currículo
+             Quando eu realizo meu login com sucesso
+              E acesso meu perfil
+              E desejo editar meu currículo
+             Então eu clico em editar consigo alterar meus dados cadastrados com sucesso
+
+        @baixarcurriculo
+        Cenario: Realizar download do meu currículo
+             Quando eu realizo meu login com sucesso
+              E acesso meu perfil
+              E desejo baixar meu currículo
+             Então eu clico em baixar e realizo o download do meu curriculo no formato PDF
+
+        @interacaocomchatbot
+        Cenario: Falar com o chatbot
+             Quando eu tenho dúvidas sobre a vaga e visualizo as mensagens de boas vindas do chatbot
+              E desejo interagir com a mesma
+             Então eu clico no campo de chat, aceito os termos e inicio uma conversa com o chatbot
+
+        @verPerfil
+        Cenario: Ver meu perfil
+             Quando eu acesso meu perfil
+             Então eu consigo visualizar meu curriculo, o perfil traçado pelo que prenchi no formulário, as vagas que me inscrevi e as empresas responsáveis pelos formulários que eu preenchi
+             
+        @acompanharvaga
+        Cenario: Acompanhar vaga escolhida
+             Quando eu escolhi uma vaga
+              E me inscrevi para a mesma
+              E desejo acompanhar a minha etapa atual
+             Então eu acesso o menu de vagas onde estão descritos dados da vaga como, o nome da vaga, o status e etapa além da data de aplicação da vaga
+        
+        
+
+
+
+
+
+
+
+
